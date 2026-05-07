@@ -2,11 +2,11 @@
 #SBATCH --job-name=evaluation
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
-#SBATCH --gres=gpu:RTX6K:1
-#SBATCH --nodelist=mpcg007
+#SBATCH --gres=gpu:L40:1
+#SBATCH --nodelist=aihg002
 #SBATCH --cpus-per-task=8
 #SBATCH --mem=64G
-#SBATCH --partition=mpcg_smds.p
+#SBATCH --partition=aihg.p
 #SBATCH --time=1-00:00
 #SBATCH --output=/dev/null
 
@@ -46,7 +46,7 @@ module load Anaconda3
 module load git
 module load GCC/13.1.0
 
-conda activate lightning3_blackwell
+conda activate lightning3
 
 mkdir -p "${LOGS_DIR}/${MODEL}"
 mkdir -p "${OUTPUT_DIR}/${MODEL}_${DATASET}"
