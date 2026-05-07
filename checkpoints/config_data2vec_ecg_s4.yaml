@@ -1,0 +1,52 @@
+defaults:
+  - base: base
+  - data@data0: ecg_ptbxl
+  - ts: tsenc
+  - ts/enc: rnn
+  - ts/pred: s4
+  - ts/head: none
+  - ts/head_ssl: none
+  - ts/loss: none
+  - static: none
+  - head: none
+  - loss: bce
+  - trainer: trainer
+  - task: ecg
+  - metric: aurocagg
+  - _self_
+
+
+base:
+  optimizer: "adam"
+  lr: [3e-3]
+  weight_decay: 1e-3
+  batch_size: 64
+  fs: 240.
+  input_channels: 12
+  input_size: 2.5
+
+trainer:
+  gpus: 1
+  refresh_rate: 1
+  username: "user"
+  epochs: 10
+  precision: 32
+  pretrained: "data2vec_e10.ckpt"
+
+ts:
+  enc:
+    features: [ 512, 512, 512, 512 ]
+    kss: [ 3, 1, 1, 1 ]
+    strides: [ 2, 1, 1, 1 ]
+    dilations: [1, 1, 1, 1]
+    normalization: true
+    layer_norm: false
+  pred:
+    causal: false
+    state_dim: 8
+    model_dim: 512
+    backbone: "s42"
+    layers: 4
+    dropout: 0.2
+    prenorm: false
+    batchnorm: false
