@@ -1,0 +1,7 @@
+defaults:
+  - base
+
+name: "ptbxl_all"
+path: "/fs/s6k/groups/agaifh/datasets/ecg_new/ptb-xl/records500"
+fs: 500.
+annotation: false

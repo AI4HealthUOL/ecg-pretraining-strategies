@@ -1,0 +1,5 @@
+__pycache__
+mlruns
+full_dataset_finetuning_linear
+full_dataset_Frozen
+full_dataset_linear

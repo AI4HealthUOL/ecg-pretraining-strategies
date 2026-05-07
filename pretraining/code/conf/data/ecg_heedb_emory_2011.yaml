@@ -1,0 +1,7 @@
+defaults:
+  - base
+
+name: "heedb_emory_2011"
+path: "/gss/work/jael1674/heedb_emory/2011"
+fs: 240.
+annotation: false

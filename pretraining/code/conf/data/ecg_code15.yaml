@@ -1,0 +1,7 @@
+defaults:
+  - base
+
+name: "code15"
+path: "/fs/s6k/groups/agaifh/datasets/ecg_new/code15"
+fs: 400.
+annotation: false

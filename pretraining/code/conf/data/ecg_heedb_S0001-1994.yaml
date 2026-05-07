@@ -1,0 +1,7 @@
+defaults:
+  - base
+
+name: "heedb_S0001-1994"
+path: "/gss/work/jael1674/heedb/S0001-1994"
+fs: 240.
+annotation: false 
