@@ -1,9 +1,5 @@
 # Pretraining Strategies and Scaling for ECG Foundation Models: A Systematic Study
 
-The official repository for the paper [Pretraining Strategies and Scaling for ECG Foundation Models: A Systematic Study](https://arxiv.org/abs/2605.12241)
-
-[![arXiv](https://img.shields.io/badge/arXiv-2605.12241-b31b1b.svg)](https://arxiv.org/abs/2605.12241)
-
 Specialized foundation models are beginning to emerge in various medical subdomains, but pretraining methodologies and parametric scaling with the size of the pretraining dataset are rarely assessed systematically and in a like-for-like manner. This work focuses on foundation models for electrocardiography (ECG) data, one of the most widely captured physiological time series world-wide. We present a comprehensive assessment of pretraining methodologies, covering five different contrastive and non-contrastive self-supervised learning objectives for ECG foundation models, and investigate their scaling behavior with pretraining dataset sizes up to 11M input samples, exclusively from publicly available sources. Pretraining strategy has a meaningful and consistent impact on downstream performance, with contrastive predictive coding (slightly ahead of JEPA) yielding the most transferable representations across diverse clinical tasks. Scaling pretraining data continues to yield meaningful improvements up to 11M samples for most objectives. We also compare model architectures across all pretraining methodologies and find evidence for a clear superiority of structured state space models compared to transformers and CNN models. We hypothesize that the strong inductive biases of structured state space models, rather than pretraining scale alone, are the primary driver of effective ECG representation learning, with important implications for future foundation model development in this and potentially other physiological signal domains.
 
 ![Abstract](abstract.svg)
