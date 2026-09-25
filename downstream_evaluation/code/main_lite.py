@@ -26,8 +26,6 @@ from pathlib import Path
 import numpy as np
 
 from main_lite_ecg import Main_Lite_ECG
-from main_lite_eeg import Main_Lite_EEG
-from main_lite_movement import Main_Lite_Movement
 
 #mlflow without autologging https://github.com/zjohn77/lightning-mlflow-hf/blob/74c30c784f719ea166941751bda24393946530b7/lightning_mlflow/train.py#L39
 MLFLOW_AVAILABLE=True
@@ -453,7 +451,7 @@ def add_model_specific_args(parser):
     return parser
 
 def add_application_specific_args(parser):
-    parser.add_argument("--modality", type=str, help="ecg/eeg/movement", default="ecg")
+    parser.add_argument("--modality", type=str, help="ecg", default="ecg")
     
     parser.add_argument("--normalize", action='store_true', help='Normalize input using dataset stats')
     parser.add_argument("--finetune-dataset", type=str, help="...", default="ptbxl_all")
@@ -492,10 +490,6 @@ if __name__ == '__main__':
 
     if(hparams.modality=="ecg"):    
         model = Main_Lite_ECG(hparams)
-    elif(hparams.modality=="eeg"):    
-        model = Main_Lite_EEG(hparams)
-    elif(hparams.modality=="movement"):    
-        model = Main_Lite_Movement(hparams)
     else:
         assert(False)
 
